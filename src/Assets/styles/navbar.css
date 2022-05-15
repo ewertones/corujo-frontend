@@ -14,3 +14,10 @@
 .Navbar-login {
     margin: 5px 0 5px auto;
 }
+
+@media only screen and (max-width: 1000px) {
+    .Navbar-items {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
