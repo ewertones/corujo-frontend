@@ -17,3 +17,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.corpus {
+  margin-left: 20%;
+  margin-right: 20%;
+  color: #444444;
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+}
