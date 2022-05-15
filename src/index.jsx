@@ -7,10 +7,10 @@ import Home from './routes/home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-    </Routes>
-  </BrowserRouter>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+        </Routes>
+    </BrowserRouter>
 );

@@ -6,7 +6,7 @@ export default function Login() {
         <div className="Login">
             <Navbar />
             <header className="corpus">
-                <h1 className="title mt-5 mb-5">Bem-vindo!</h1>
+                <h1 className="Login-title title mt-5 mb-5">Bem-vindo!</h1>
                 <LoginForm />
             </header>
         </div>
