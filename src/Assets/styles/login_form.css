@@ -1,0 +1,11 @@
+.Login-submit {
+    background-color: #282c34;
+    border-color: #282c34;
+}
+
+@media screen and (min-width: 1000px) {
+    .Login-form {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}

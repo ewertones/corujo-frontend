@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="Home">
       <Navbar />
-      <header className="corpus">
+      <header className="Home-body corpus">
         <img src={logo} className="Home-logo" alt="logo" />
         <p>Just a unedited React template.</p>
         <a
