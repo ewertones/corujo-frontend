@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import logo from './Assets/Images/owl.png';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Navbar />
+      <header className="App-body">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Just a unedited React template.
-        </p>
+        <p>Just a unedited React template.</p>
         <a
           className="App-link"
           href="https://api.corujo.com.br/docs"
@@ -22,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

@@ -1,0 +1,14 @@
+.Navbar {
+    background-color: #282c34;
+}
+
+.Navbar-items {
+    display: flex;
+    margin: 0 20% 0 20%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.Navbar-login {
+    margin: 5px 0 5px auto;
+}
