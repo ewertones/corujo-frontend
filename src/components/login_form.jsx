@@ -17,7 +17,7 @@ export default function LoginForm() {
                 <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                 <label className="form-check-label" htmlFor="exampleCheck1">Lembrar-me</label>
             </div>
-            <button type="submit" className="Login-submit btn btn-primary btn-lg d-grid mx-auto col-4 mt-3">Entrar</button>
+            <button type="submit" className="Login-submit btn btn-primary btn-lg d-grid mx-auto col-4 mt-4">Entrar</button>
         </form>
     )
 }
