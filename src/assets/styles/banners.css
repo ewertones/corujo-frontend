@@ -1,0 +1,13 @@
+.Banner-title {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.Banner-content {
+    font-size: 110%;
+    line-height: 220%;
+}
+
+.Banner-column {
+    min-width: 350px;
+}
