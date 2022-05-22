@@ -1,11 +1,11 @@
 .Results {
-    border: 1px solid red;
+    border: 1px solid #444444;
     width: 100%;
     min-height: 150px;
     margin: 20px 0 30px 0;
 }
 
 .Results-column {
-    border: 1px solid orange;
+    border: 1px solid #444444;
     margin: 5px;
 }

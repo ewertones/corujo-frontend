@@ -14,7 +14,7 @@ export default function Banner1() {
             <div className="Banner-column col">
                 <figure>
                     <img src={cute_owl} className="rounded float-right" width="100%" alt="" />
-                    <figcaption>Olha que coisa linda!</figcaption>
+                    <figcaption>O placeholder mais lindo que você verá hoje!</figcaption>
                 </figure>
             </div>
         </div>

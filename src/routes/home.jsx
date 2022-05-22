@@ -4,7 +4,7 @@ import DBOff from '../components/db_alerts';
 import Assets from '../components/assets';
 import Banner1 from '../components/banners';
 import Results from '../components/results';
-import HowToCreateAccount from '../components/faq';
+import FAQ from '../components/faq';
 
 export default function Home() {
     return (
@@ -15,7 +15,7 @@ export default function Home() {
                 <Assets />
                 <Banner1 />
                 <Results />
-                <HowToCreateAccount />
+                <FAQ />
             </header>
         </div>
     );

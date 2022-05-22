@@ -6,7 +6,7 @@ export default function Recover() {
         <div className="Recover">
             <Navbar />
             <header className="corpus">
-                <h1 className="title mt-5 mb-5">Recuperar Senha</h1>
+                <h1 className="title mt-5 mb-5">Esqueceu a senha?</h1>
                 <RecoverForm />
             </header>
         </div>

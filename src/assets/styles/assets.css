@@ -1,6 +1,31 @@
-.Assets {
-    border: 1px solid red;
-    width: 100%;
-    min-height: 100px;
-    margin: 20px 0 50px 0;
+.Asset {
+    margin: 10px;
+}
+
+.assetPrice {
+    font-weight: 800;
+    font-size: 32px;
+}
+
+.assetVariation {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.assetPercentVariation {
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.assetSymbol {
+    font-size: 20px;
+}
+
+.assetName {
+    font-size: 17px;
+}
+
+.assetVariation,
+.assetPercentVariation {
+    color: #198754;
 }

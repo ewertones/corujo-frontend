@@ -1,6 +1,6 @@
 import "../assets/styles/faq.css"
 
-export default function HowToCreateAccount() {
+export default function FAQ() {
     return (
         <div className="row">
             <h2 className="FAQ_Title title">Perguntas Frequentes</h2>
