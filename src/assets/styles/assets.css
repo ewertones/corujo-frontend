@@ -1,3 +1,9 @@
+@media all and (max-width: 2020px) {
+    .Assets {
+        display: none !important;
+    }
+}
+
 .Asset {
     margin: 10px;
 }
@@ -23,9 +29,4 @@
 
 .assetName {
     font-size: 17px;
-}
-
-.assetVariation,
-.assetPercentVariation {
-    color: #198754;
 }
