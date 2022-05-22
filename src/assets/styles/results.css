@@ -1,11 +1,17 @@
-.Results {
-    border: 1px solid #444444;
-    width: 100%;
-    min-height: 150px;
-    margin: 20px 0 30px 0;
+.ResultsColumn {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    grid-row-gap: 100px;
 }
 
-.Results-column {
-    border: 1px solid #444444;
-    margin: 5px;
+.ResultsValue {
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.ResultsValueNumber {
+    color: #135728;
+    font-weight: 900;
+    font-size: 70px;
 }
