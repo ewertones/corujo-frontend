@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function LoginForm() {
     return (
         <form>
@@ -32,8 +30,8 @@ export default function LoginForm() {
                 <input type="password" className="form-control" id="signup_password" />
             </div>
             <div className="form-check">
-                <input type="checkbox" className="form-check-input" id="signup_remember" />
-                <label className="form-check-label" htmlFor="signup_remember">Aceito os Termos de Uso e a Política de Privacidade</label>
+                <input type="checkbox" className="form-check-input" id="signup_accept" />
+                <label className="form-check-label" htmlFor="signup_accept">Aceito os Termos de Uso e a Política de Privacidade</label>
             </div>
             <button type="submit" className="dark-submit btn btn-dark btn-lg d-grid mx-auto col-4 mt-4">Entrar</button>
         </form >

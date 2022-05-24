@@ -6,24 +6,24 @@ export default function FAQ() {
                 <div className="col-lg mb-5">
                     <div className="card h-100">
                         <div className="card-body">
-                            <h5 className="card-title">Como crio uma conta?</h5>
-                            <p className="card-text">Você não pode.</p>
+                            <h5 className="card-title">Devo me basear nestas recomendações?</h5>
+                            <p className="card-text">Não, Corujo é apenas um projeto educacional.</p>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg mb-5">
                     <div className="card h-100">
                         <div className="card-body">
-                            <h5 className="card-title">Por que não?</h5>
-                            <p className="card-text">Até o presente momento, Corujo é apenas um projeto educacional.</p>
+                            <h5 className="card-title">Como invisto dinheiro aqui?</h5>
+                            <p className="card-text">Corujo apenas fornece previsões.</p>
                         </div>
                     </div>
                 </div>
                 <div className="col-lg mb-5">
                     <div className="card h-100">
                         <div className="card-body">
-                            <h5 className="card-title">Vão liberar algum dia?</h5>
-                            <p className="card-text">Ainda não sei. ¯\_(ツ)_/¯</p>
+                            <h5 className="card-title">Quer investir meu dinheiro?</h5>
+                            <p className="card-text">Não, desculpe. ¯\_(ツ)_/¯</p>
                         </div>
                     </div>
                 </div>
