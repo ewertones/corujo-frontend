@@ -23,7 +23,7 @@ export default function Assets() {
 
 const Asset = ({ props }) => {
     return (
-        <div className={`col-lg gx-2 border border-3 rounded p-2 ms-2 me-2 ${props.variation > 0 ? "border-success" : props.variation < 0 ? "border-danger" : "border-secondary"}`}>
+        <div className={`col-lg gx-2 border border-3 rounded p-2 ms-2 me-2 mb-3 ${props.variation > 0 ? "border-success" : props.variation < 0 ? "border-danger" : "border-secondary"}`}>
             <div className="row">
                 <div className="col text-start">
                     <Icon path={props.mdi} title="symbol" size={2} rotate={0} color="black" />
