@@ -1,12 +1,12 @@
 import Navbar from "../components/navbar";
-import LoginForm from "../components/login_form";
+import LoginForm from "../components/form_login";
 
 export default function Login() {
     return (
-        <div className="Login">
+        <div>
             <Navbar />
-            <header className="corpus">
-                <h1 className="title mt-5 mb-5">Bem-vindo!</h1>
+            <header className="container">
+                <h2 className="subtitle mt-5 mb-5 text-center">Bem-vindo!</h2>
                 <LoginForm />
             </header>
         </div>

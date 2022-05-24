@@ -1,4 +1,3 @@
-import "../assets/styles/assets.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Icon from '@mdi/react'
@@ -16,7 +15,7 @@ export default function Assets() {
     };
 
     return (
-        <Slider {...sliderSettings} className="Assets mt-5 mb-5">
+        <Slider {...sliderSettings} className="Assets mt-4">
             {slider_objects.map((asset, index) => <Asset key={index} props={asset} />)}
         </Slider>
     )
@@ -24,20 +23,20 @@ export default function Assets() {
 
 const Asset = ({ props }) => {
     return (
-        <div className={`Asset col gx-2 border border-3 rounded p-2 ${props.variation > 0 ? "border-success" : props.variation < 0 ? "border-danger" : "border-secondary"}`}>
+        <div className={`col-lg gx-2 border border-3 rounded p-2 ms-2 me-2 ${props.variation > 0 ? "border-success" : props.variation < 0 ? "border-danger" : "border-secondary"}`}>
             <div className="row">
-                <div className="assetMDI col text-start">
-                    <Icon path={props.mdi} title="Asset symbol" size={2} rotate={0} color="black" />
+                <div className="col text-start">
+                    <Icon path={props.mdi} title="symbol" size={2} rotate={0} color="black" />
                 </div>
-                <div className="assetPrice col text-end">{formatCurrency(props.value)}</div>
+                <div className="fs-32 fw-bold col text-end">{formatCurrency(props.value)}</div>
             </div>
             <div className="row">
-                <div className="assetSymbol col text-start"><strong>{props.symbol}</strong></div>
-                <div className={`assetVariation col text-end ${props.variation > 0 ? "text-success" : props.variation < 0 ? "text-danger" : "text-secondary"}`}>{formatCurrency(props.variation)}</div>
+                <div className="fs-20 col text-start"><strong>{props.symbol}</strong></div>
+                <div className={`fs-20 fw-bold col text-end ${props.variation > 0 ? "text-success" : props.variation < 0 ? "text-danger" : "text-secondary"}`}>{formatCurrency(props.variation)}</div>
             </div>
             <div className="row">
                 <div className="assetName col text-start">{props.name}</div>
-                <div className={`assetPercentVariation col text-end ${props.variation > 0 ? "text-success" : props.variation < 0 ? "text-danger" : "text-secondary"}`}>{formatPercentage(props.percentage)}</div>
+                <div className={`fs-17 fw-bold col text-end ${props.variation > 0 ? "text-success" : props.variation < 0 ? "text-danger" : "text-secondary"}`}>{formatPercentage(props.percentage)}</div>
             </div>
         </div>
     )

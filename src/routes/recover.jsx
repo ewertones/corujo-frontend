@@ -1,12 +1,12 @@
 import Navbar from "../components/navbar";
-import RecoverForm from "../components/recover_form";
+import RecoverForm from "../components/form_recover";
 
 export default function Recover() {
     return (
-        <div className="Recover">
+        <div>
             <Navbar />
-            <header className="corpus">
-                <h1 className="title mt-5 mb-5">Esqueceu a senha?</h1>
+            <header className="container">
+                <h2 className="subtitle mt-5 mb-5 text-center">Esqueceu a senha?</h2>
                 <RecoverForm />
             </header>
         </div>

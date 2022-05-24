@@ -1,19 +1,16 @@
 import cute_owl from "../assets/images/cute_owl_min.webp"
-import "../assets/styles/banners.css"
 
 export default function Banner1() {
     return (
-        <div className="Banner row">
-            <div className="Banner-column col">
-                <div className="Banner-title mb-3">Inteligência&nbsp;Artificial na Bolsa&nbsp;de&nbsp;Valores</div>
-                <div className="Banner-content">
-                    <p>Corujo é uma rede neural que coleta diariamente dados de diversos tipos de ativos como ações, índices, fundos de investimento, FOREX, <i>commodities</i> & criptomoedas.</p>
-                    <p>Corujo gera uma distribuição otimizada e diversificada que tende a maximizar o lucro em D+1, porém fornecendo previsões para períodos maiores também.</p>
-                </div>
+        <div className="container row ">
+            <div className="col-lg mt-5 mb-2">
+                <h2 className="subtitle mb-3">Inteligência&nbsp;Artificial na Bolsa&nbsp;de&nbsp;Valores</h2>
+                <p>Corujo é uma Rede Neural Artificial que coleta diariamente dados de diversos tipos de ativos como ações, índices, fundos de investimento, FOREX, <i>commodities</i> & criptomoedas.</p>
+                <p>Corujo gera uma distribuição otimizada e diversificada que tende a maximizar o lucro para o dia seguinte, porém fornecendo previsões para períodos abragentens.</p>
             </div>
-            <div className="Banner-column col">
+            <div className="col-lg mt-5 mb-2">
                 <figure>
-                    <img src={cute_owl} className="rounded float-right" width="100%" alt="" />
+                    <img src={cute_owl} className="rounded" width="100%" alt="" />
                     <figcaption>O placeholder mais lindo que você verá hoje!</figcaption>
                 </figure>
             </div>

@@ -1,4 +1,3 @@
-import '../assets/styles/home.css';
 import Navbar from '../components/navbar';
 import DBOff from '../components/db_alerts';
 import Assets from '../components/assets';
@@ -8,9 +7,9 @@ import FAQ from '../components/faq';
 
 export default function Home() {
     return (
-        <div className="Home">
+        <div>
             <Navbar />
-            <header className="Home-body corpus">
+            <header className="container text-center">
                 <DBOff />
                 <Assets />
                 <Banner1 />
