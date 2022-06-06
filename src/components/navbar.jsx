@@ -14,11 +14,12 @@ export default function Navbar() {
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto">
-                        <li className="nav-item ms-3 me-3 text-center"><Link to="/contato" className="nav-link">Contato</Link></li>
-                        <li className="nav-item"><Link to="/entrar" type="button" className="nav-link btn btn-outline-warning">Entrar</Link></li>
+                        <li className="nav-item ms-2 me-2 text-center"><a className="nav-link" href="https://api.corujo.com.br/" target="_blank" rel="noopener noreferrer">API</a></li>
+                        <li className="nav-item ms-2 me-2 text-center"><Link to="/contato" className="nav-link">Contato</Link></li>
+                        <li className="nav-item ms-2 me-2 text-center"><Link to="/entrar" type="button" className="nav-link btn btn-outline-warning">Entrar</Link></li>
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav >
     )
 }

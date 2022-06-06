@@ -1,5 +1,5 @@
 import Navbar from '../components/navbar';
-import DBOff from '../components/db_alerts';
+// import DBOff from '../components/db_alerts';
 import Assets from '../components/assets';
 import Banner1 from '../components/banners';
 import Results from '../components/results';
@@ -10,7 +10,7 @@ export default function Home() {
         <div>
             <Navbar />
             <header className="container text-center">
-                <DBOff />
+                {/* <DBOff /> */}
                 <Assets />
                 <Banner1 />
                 <Results />
