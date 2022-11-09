@@ -1,7 +1,6 @@
+### 🇺🇸 Sorry, but this README was written in Portuguese! 🇺🇸
 
-### 🇺🇸  Sorry, but this README was written in Portuguese!  🇺🇸
-
-# Corujo -  https://corujo.com.br
+# Corujo - https://corujo.com.br
 
 ## O que é isso?
 
@@ -13,17 +12,29 @@ O código foi escrito com Node.js v17.9 e npm 8.5.5. Recomendo instalar uma vers
 
 1.  Abra o terminal onde deseja armazenar o projeto;
 2.  Clone o repositório:
+
 ```bash
 git clone git@github.com:ewertones/corujo-frontend.git
 ```
+
 3.  Entre na pasta criada:
 
+```bash
 cd corujo-frontend
+```
+
+4. Instale as dependências:
+
+```bash
+npm install
+```
 
 4.  Inicie o servidor:
+
 ```bash
 npm start
 ```
+
 ## Suporte
 
 Caso não tenha conseguido acessar/clonar/rodar o projeto, mande um e-mail para admin@corujo.com.br relatando o problema.
