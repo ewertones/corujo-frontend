@@ -16,7 +16,7 @@ import PrivateRoute from "./components/private_route";
 export default function App() {
     const rememberMe = localStorage.getItem("remember_me");
     if (rememberMe === null) {
-        localStorage.removeItem("logged_user");
+        localStorage.removeItem("bearer_token");
     }
     return (
         <BrowserRouter>

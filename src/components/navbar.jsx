@@ -40,7 +40,7 @@ export default function Navbar() {
         );
     }
 
-    const isLoggedIn = localStorage.getItem("logged_user") !== null;
+    const isLoggedIn = Boolean(localStorage.getItem("bearerToken"));
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
