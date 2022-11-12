@@ -53,7 +53,7 @@ export default function App() {
                     path="/"
                     element={
                         <PrivateRoute isLoggedIn={isLoggedIn}>
-                            <Home bearerToken={credentials["bearerToken"]} />
+                            <Home credentials={credentials} />
                         </PrivateRoute>
                     }
                 />

@@ -6,7 +6,8 @@ export default function Navbar({ credentials, setCredentials, isLoggedIn }) {
     const navigate = useNavigate();
 
     const handleLogout = (event) => {
-        setCredentials(null);
+        setCredentials({});
+        localStorage.setItem("credentials", JSON.stringify({}));
         navigate("/entrar");
     };
 
