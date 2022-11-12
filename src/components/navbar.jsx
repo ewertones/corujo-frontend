@@ -6,9 +6,7 @@ export default function Navbar({ credentials, setCredentials, isLoggedIn }) {
     const navigate = useNavigate();
 
     const handleLogout = (event) => {
-        event.preventDefault();
-        delete credentials["bearerToken"];
-        setCredentials(JSON.stringify(credentials));
+        setCredentials(null);
         navigate("/entrar");
     };
 
@@ -30,7 +28,7 @@ export default function Navbar({ credentials, setCredentials, isLoggedIn }) {
         return (
             <li className="nav-item ms-2 me-2 text-center">
                 <Link
-                    to="/login"
+                    to="/entrar"
                     type="button"
                     className="nav-link btn btn-outline-warning"
                     onClick={handleLogout}
