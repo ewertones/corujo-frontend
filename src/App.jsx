@@ -20,8 +20,6 @@ export default function App() {
     );
 
     const handleLogin = (bearerToken, validUntil) => {
-        console.log(credentials);
-        console.log(typeof credentials);
         let newCredentials = credentials === null ? {} : credentials;
         newCredentials["bearerToken"] = bearerToken;
         newCredentials["validUntil"] = validUntil;
