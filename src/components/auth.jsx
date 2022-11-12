@@ -1,23 +1,21 @@
-export default async function auth(event, credentials, setCredentials) {
+export default async function auth(event, handleLogin) {
     const email = event.target[0].value;
     const password = event.target[1].value;
     const rememberMe = event.target[2].checked;
 
-    if (rememberMe) {
-        localStorage.setItem("remember_me", true);
-    }
-
     var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+    myHeaders.append("Content-Type", "application/json");
 
-    var urlencoded = new URLSearchParams();
-    urlencoded.append("username", email);
-    urlencoded.append("password", password);
+    var raw = JSON.stringify({
+        email: email,
+        password: password,
+        rememberMe: rememberMe,
+    });
 
     var requestOptions = {
         method: "POST",
         headers: myHeaders,
-        body: urlencoded,
+        body: raw,
         redirect: "follow",
     };
 
@@ -33,11 +31,7 @@ export default async function auth(event, credentials, setCredentials) {
             if (obj.status === 401) {
                 error = obj.message.detail;
             } else if (obj.status === 200) {
-                if (typeof credentials == "string") {
-                    credentials = JSON.parse(credentials);
-                }
-                credentials["bearerToken"] = obj.message.access_token;
-                setCredentials(credentials);
+                handleLogin(obj.message.access_token, obj.message.valid_until);
             }
         });
 

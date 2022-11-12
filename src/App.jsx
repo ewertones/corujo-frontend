@@ -14,28 +14,40 @@ import Contact from "./routes/contact";
 import PrivateRoute from "./components/private_route";
 import { useEffect, useState } from "react";
 
+import jwt_decode from "jwt-decode";
+
 export default function App() {
     const [credentials, setCredentials] = useState(
         JSON.parse(localStorage.getItem("credentials"))
     );
+
+    const handleLogin = (bearerToken, validUntil) => {
+        let newCredentials = credentials === null ? {} : credentials;
+        newCredentials["bearerToken"] = bearerToken;
+        newCredentials["validUntil"] = validUntil;
+        setCredentials(newCredentials);
+        localStorage.setItem("credentials", JSON.stringify(newCredentials));
+    };
 
     useEffect(() => {
         localStorage.setItem("credentials", JSON.stringify(credentials));
     }, [credentials]);
 
     useEffect(() => {
-        if (
-            typeof credentials == "object" &&
-            "expireTime" in credentials &&
-            Date.parse(credentials["expireTime"]) < new Date()
-        ) {
-            delete credentials["bearerToken"];
-            setCredentials(credentials);
+        if (isLoggedIn()) {
+            if (new Date() >= credentials["validUntil"]) {
+                setCredentials(null);
+            }
         }
-    }, [credentials]);
+    }, []);
 
-    const isLoggedIn = () =>
-        typeof credentials == "object" && "bearerToken" in credentials;
+    const isLoggedIn = () => {
+        return (
+            credentials !== null &&
+            typeof credentials === "object" &&
+            "bearerToken" in credentials
+        );
+    };
 
     return (
         <BrowserRouter>
@@ -56,13 +68,7 @@ export default function App() {
                 <Route path="/recuperar_senha" element={<Recover />} />
                 <Route
                     path="/entrar"
-                    element={
-                        <Login
-                            isLoggedIn={isLoggedIn}
-                            credentials={credentials}
-                            setCredentials={setCredentials}
-                        />
-                    }
+                    element={<Login handleLogin={handleLogin} />}
                 />
                 <Route path="/cadastrar" element={<Signup />} />
                 <Route path="/contato" element={<Contact />} />
