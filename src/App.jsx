@@ -14,8 +14,6 @@ import Contact from "./routes/contact";
 import PrivateRoute from "./components/private_route";
 import { useEffect, useState } from "react";
 
-import jwt_decode from "jwt-decode";
-
 export default function App() {
     const [credentials, setCredentials] = useState(
         JSON.parse(localStorage.getItem("credentials"))
@@ -33,19 +31,13 @@ export default function App() {
         localStorage.setItem("credentials", JSON.stringify(credentials));
     }, [credentials]);
 
-    useEffect(() => {
-        if (isLoggedIn()) {
-            if (new Date() >= credentials["validUntil"]) {
-                setCredentials(null);
-            }
-        }
-    }, []);
-
     const isLoggedIn = () => {
         return (
             credentials !== null &&
             typeof credentials === "object" &&
-            "bearerToken" in credentials
+            "bearerToken" in credentials &&
+            "validUntil" in credentials &&
+            new Date() < Date.parse(credentials["validUntil"])
         );
     };
 
@@ -61,7 +53,7 @@ export default function App() {
                     path="/"
                     element={
                         <PrivateRoute isLoggedIn={isLoggedIn}>
-                            <Home />
+                            <Home bearerToken={credentials["bearerToken"]} />
                         </PrivateRoute>
                     }
                 />
