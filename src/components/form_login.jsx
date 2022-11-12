@@ -2,14 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import auth from "./auth.jsx";
 
-export default function LoginForm() {
+export default function LoginForm({ credentials, setCredentials }) {
     const [submittedMessage, setSubmittedMessage] = useState("");
 
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const error = await auth(e);
+        const error = await auth(e, credentials, setCredentials);
         if (typeof error !== "undefined") {
             setSubmittedMessage(
                 <div className="alert alert-danger mt-3" role="alert">

@@ -1,4 +1,4 @@
-export default async function auth(event) {
+export default async function auth(event, credentials, setCredentials) {
     const email = event.target[0].value;
     const password = event.target[1].value;
     const rememberMe = event.target[2].checked;
@@ -33,7 +33,11 @@ export default async function auth(event) {
             if (obj.status === 401) {
                 error = obj.message.detail;
             } else if (obj.status === 200) {
-                localStorage.setItem("bearerToken", obj.message.access_token);
+                if (typeof credentials == "string") {
+                    credentials = JSON.parse(credentials);
+                }
+                credentials["bearerToken"] = obj.message.access_token;
+                setCredentials(credentials);
             }
         });
 

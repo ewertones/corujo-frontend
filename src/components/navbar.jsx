@@ -2,12 +2,13 @@ import logo from "../assets/images/owl.png";
 import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/js/src/collapse.js";
 
-export default function Navbar() {
+export default function Navbar({ credentials, setCredentials, isLoggedIn }) {
     const navigate = useNavigate();
 
     const handleLogout = (event) => {
-        localStorage.removeItem("logged_user");
         event.preventDefault();
+        delete credentials["bearerToken"];
+        setCredentials(JSON.stringify(credentials));
         navigate("/entrar");
     };
 
@@ -39,8 +40,6 @@ export default function Navbar() {
             </li>
         );
     }
-
-    const isLoggedIn = Boolean(localStorage.getItem("bearerToken"));
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -81,7 +80,7 @@ export default function Navbar() {
                                 Contato
                             </Link>
                         </li>
-                        {isLoggedIn ? logoutButton() : loginButton()}
+                        {isLoggedIn() ? logoutButton() : loginButton()}
                     </ul>
                 </div>
             </div>
