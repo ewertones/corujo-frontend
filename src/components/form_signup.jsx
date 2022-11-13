@@ -1,28 +1,34 @@
 import { useState } from "react";
 import signup from "./signup.jsx";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function LoginForm() {
     const [submittedMessage, setSubmittedMessage] = useState("");
+    const [didRecaptcha, setDidRecaptcha] = useState(false);
+
+    const handleRecaptcha = (value) => setDidRecaptcha(true);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const error = await signup(e);
-        if (typeof error !== "undefined") {
-            setSubmittedMessage(
-                <div className="alert alert-danger mt-3" role="alert">
-                    {error}
-                </div>
-            );
-        } else {
-            setSubmittedMessage(
-                <div className="alert alert-warning mt-3" role="alert">
-                    Cadastro efetuado com sucesso!
-                    <br />
-                    Um email foi enviado para que possa ativar a conta.
-                    <br />
-                </div>
-            );
-            e.target.reset();
+        if (didRecaptcha) {
+            const error = await signup(e);
+            if (typeof error !== "undefined") {
+                setSubmittedMessage(
+                    <div className="alert alert-danger mt-3" role="alert">
+                        {error}
+                    </div>
+                );
+            } else {
+                setSubmittedMessage(
+                    <div className="alert alert-warning mt-3" role="alert">
+                        Cadastro efetuado com sucesso!
+                        <br />
+                        Um email foi enviado para que possa ativar a conta.
+                        <br />
+                    </div>
+                );
+                e.target.reset();
+            }
         }
     };
 
@@ -103,7 +109,7 @@ export default function LoginForm() {
                         />
                     </div>
                 </div>
-                <div className="row form-check mt-4">
+                <div className="row form-check mt-4 mb-3">
                     <div className="col">
                         <input
                             type="checkbox"
@@ -119,6 +125,10 @@ export default function LoginForm() {
                         </label>
                     </div>
                 </div>
+                <ReCAPTCHA
+                    sitekey="6LdDlAEjAAAAAIzgfEdXhg73FxI9hzKbmLGjLqcg"
+                    onChange={handleRecaptcha}
+                />
                 <button
                     type="submit"
                     className="dark-submit btn btn-dark btn-lg d-grid mx-auto col-4 mt-4"
